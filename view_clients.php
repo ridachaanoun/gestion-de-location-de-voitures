@@ -47,6 +47,7 @@
                                 <td class='py-3 px-6 text-left'>{$row['phone_number']}</td>
                                 <td class='py-3 px-6 text-left'>{$row['email']}</td>
                                 <td class='py-3 px-6 text-center'>
+                                    <a href='edit_client.php?id={$row['id']}' class='bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600 mr-2'>Edit</a>
                                     <button class='bg-red-500 text-white px-4 py-2 rounded hover:bg-red-600' onclick='showModal({$row['id']})'>Delete</button>
                                 </td>
                               </tr>";
