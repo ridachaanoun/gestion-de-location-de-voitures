@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add Client</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="navStyle.css">
+</head>
+<body>
+
+        <!-- Navbar Section -->
+        <nav class="navbar">
+            <ul>
+                <li><a href="index.html">Add Client</a></li>
+                <li><a href="view_clients.php">View Clients</a></li>
+                <li><a href="view_cars.php">View Cars</a></li>
+            </ul>
+        </nav>
+
+    <h1>Add New Client</h1>
+    <form action="add_client.php" method="POST">
+        <label for="name">Name:</label>
+        <input type="text" name="name" required><br><br>
+
+        <label for="address">Address:</label>
+        <input type="text" name="address" required><br><br>
+
+        <label for="phone_number">Phone Number:</label>
+        <input type="text" name="phone_number" required><br><br>
+
+        <label for="email">Email:</label>
+        <input type="email" name="email" required><br><br>
+
+        <button type="submit">Add Client</button>
+    </form>
+</body>
+</html>

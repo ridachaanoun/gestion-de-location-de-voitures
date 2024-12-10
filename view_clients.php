@@ -13,8 +13,8 @@
         <ul class="flex justify-around">
             <li><a href="index.html" class="hover:text-gray-200">Add Client</a></li>
             <li><a href="view_clients.php" class="hover:text-gray-200">View Clients</a></li>
-            <li><a href="edit_client.php" class="hover:text-gray-200">Edit Client</a></li>
-            <li><a href="delete_client.php" class="hover:text-gray-200">Delete Client</a></li>
+            <li><a href="view_cars.php" class="hover:text-gray-200">View Cars</a></li>
+            <li><a href="add_car.php" class="hover:text-gray-200">add Cars</a></li>
         </ul>
     </nav>
 
