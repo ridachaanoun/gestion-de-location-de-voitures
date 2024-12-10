@@ -1,40 +1,59 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Add Client</title>
-    <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="navStyle.css">
+    <script src="https://cdn.tailwindcss.com"></script>
 </head>
-<body>
 
-        <!-- Navbar Section -->
-        <nav class="navbar">
-            <ul>
-                <li><a href="add_client_form.php" class="hover:text-gray-200">Add Client</a></li>
-                <li><a href="view_clients.php" class="hover:text-gray-200">View Clients</a></li>
-                <li><a href="edit_client.php" class="hover:text-gray-200">Edit Client</a></li>
-                <li><a href="delete_client.php" class="hover:text-gray-200">Delete Client</a></li>
-                <li><a href="add_rental_contract.php" class="hover:text-gray-200">Add RentalContractst</a></li>
-            </ul>
-        </nav>
+<body class="bg-gray-100">
 
-    <h1>Add New Client</h1>
-    <form action="add_client.php" method="POST">
-        <label for="name">Name:</label>
-        <input type="text" name="name" required><br><br>
+    <!-- Navbar Section -->
+    <nav class="bg-blue-600 text-white p-4 shadow">
+        <ul class="flex justify-around">
+            <li><a href="index.html" class="hover:text-gray-200">Add Client</a></li>
+            <li><a href="view_clients.php" class="hover:text-gray-200">View Clients</a></li>
+            <li><a href="view_cars.php" class="hover:text-gray-200">View Cars</a></li>
+            <li><a href="add_car.php" class="hover:text-gray-200">Add Cars</a></li>
+            <li><a href="add_rental_contract.php" class="hover:text-gray-200">Add Rental Contracts</a></li>
+        </ul>
+    </nav>
 
-        <label for="address">Address:</label>
-        <input type="text" name="address" required><br><br>
+    <div class="container mx-auto mt-10 p-6 bg-white shadow-md rounded-md max-w-lg">
 
-        <label for="phone_number">Phone Number:</label>
-        <input type="text" name="phone_number" required><br><br>
+        <h1 class="text-2xl font-bold text-gray-700 text-center mb-6">Add New Client</h1>
 
-        <label for="email">Email:</label>
-        <input type="email" name="email" required><br><br>
+        <!-- Client Add Form -->
+        <form action="add_client.php" method="POST" class="space-y-6">
+            <div>
+                <label for="name" class="block text-gray-700 text-sm font-bold mb-2">Name:</label>
+                <input type="text" name="name" required class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline">
+            </div>
 
-        <button type="submit">Add Client</button>
-    </form>
+            <div>
+                <label for="address" class="block text-gray-700 text-sm font-bold mb-2">Address:</label>
+                <input type="text" name="address" required class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline">
+            </div>
+
+            <div>
+                <label for="phone_number" class="block text-gray-700 text-sm font-bold mb-2">Phone Number:</label>
+                <input type="text" name="phone_number" required class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline">
+            </div>
+
+            <div>
+                <label for="email" class="block text-gray-700 text-sm font-bold mb-2">Email:</label>
+                <input type="email" name="email" required class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline">
+            </div>
+
+            <div class="flex justify-between">
+                <button type="submit" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline">Add Client</button>
+                <a href="view_clients.php" class="bg-gray-500 hover:bg-gray-600 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline">Cancel</a>
+            </div>
+        </form>
+    </div>
+
 </body>
+
 </html>
