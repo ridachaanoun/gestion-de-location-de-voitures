@@ -6,10 +6,25 @@ if (isset($_GET['id'])) {
     $contractId = $_GET['id'];
 
     // Fetch the rental contract details from the database
-    $sql = "SELECT rc.*, c.name AS client_name, cr.make AS car_make, cr.model AS car_model FROM RentalContracts rc
-            JOIN Clients c ON rc.client_id = c.id
-            JOIN Cars cr ON rc.car_id = cr.id
-            WHERE rc.id = $contractId";
+    $sql = "SELECT 
+                RentalContracts.id AS contract_id,
+                RentalContracts.client_id,
+                RentalContracts.car_id,
+                RentalContracts.rental_date,
+                RentalContracts.return_date,
+                RentalContracts.total_amount,
+                Clients.name AS client_name,
+                Cars.make AS car_make,
+                Cars.model AS car_model
+            FROM 
+                RentalContracts
+            JOIN 
+                Clients ON RentalContracts.client_id = Clients.id
+            JOIN 
+                Cars ON RentalContracts.car_id = Cars.id
+            WHERE 
+                RentalContracts.id = $contractId;
+            ";
     $result = $conn->query($sql);
 
     if ($result->num_rows > 0) {
