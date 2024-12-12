@@ -1,9 +1,9 @@
 <?php
 include 'db_connection.php';
 
-$sql = "SELECT RentalContracts.id, RentalContracts.client_id, RentalContracts.car_id, RentalContracts.rental_date, RentalContracts.return_date, RentalContracts.total_amount, Clients.name AS client_name
-        FROM RentalContracts
-        JOIN Clients ON RentalContracts.client_id = Clients.id";
+$sql = "SELECT RentalContracts.id, RentalContracts.client_id, RentalContracts.car_id, RentalContracts.rental_date, RentalContracts.return_date, RentalContracts.total_amount, Clients.name AS client_name, Cars.make AS car_name    FROM RentalContracts
+        JOIN Clients ON RentalContracts.client_id = Clients.id
+        JOIN Cars on RentalContracts.car_id = Cars.id";
 $result = $conn->query($sql);
 ?>
 
@@ -38,7 +38,7 @@ $result = $conn->query($sql);
                 <tr>
                     <th class="py-2 px-4 border">ID</th>
                     <th class="py-2 px-4 border">Client Name</th> <!-- Show client name -->
-                    <th class="py-2 px-4 border">Car ID</th>
+                    <th class="py-2 px-4 border">Car Make</th>
                     <th class="py-2 px-4 border">Rental Date</th>
                     <th class="py-2 px-4 border">Return Date</th>
                     <th class="py-2 px-4 border">Total Amount</th>
@@ -52,7 +52,7 @@ $result = $conn->query($sql);
                         echo "<tr>
                                 <td class='py-2 px-4 border'>{$row['id']}</td>
                                 <td class='py-2 px-4 border'>{$row['client_name']}</td> <!-- Display client name -->
-                                <td class='py-2 px-4 border'>{$row['car_id']}</td>
+                                <td class='py-2 px-4 border'>{$row['car_name']}</td>
                                 <td class='py-2 px-4 border'>{$row['rental_date']}</td>
                                 <td class='py-2 px-4 border'>{$row['return_date']}</td>
                                 <td class='py-2 px-4 border'>{$row['total_amount']}</td>
