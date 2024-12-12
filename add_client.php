@@ -29,6 +29,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     // Execute query
     if ($stmt->execute()) {
         echo "New client added successfully!";
+        header("location: view_clients.php");
     } else {
         echo "Error: " . $stmt->error;
     }
