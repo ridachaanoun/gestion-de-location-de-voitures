@@ -9,10 +9,11 @@ $result = $conn->query($sql);
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>View Cars</title>
     <script src="https://cdn.tailwindcss.com"></script>
 </head>
-<body class="bg-gray-100">
+<body class="bg-gray-100 font-sans leading-normal tracking-normal">
 
     <!-- Navbar Section -->
     <nav class="bg-blue-600 text-white p-4 shadow">
@@ -22,42 +23,44 @@ $result = $conn->query($sql);
             <li><a href="view_cars.php" class="hover:text-gray-200">View Cars</a></li>
             <li><a href="add_car.php" class="hover:text-gray-200">Add Cars</a></li>
             <li><a href="add_rental_contract.php" class="hover:text-gray-200">Add Rental Contracts</a></li>
-            <li><a href="add_rental_contract.php" class="hover:text-gray-200">Add Rental Contract</a></li>
             <li><a href="view_rental_contracts.php" class="hover:text-gray-200">View Rental Contracts</a></li>
         </ul>
     </nav>
 
-    <div class="container mx-auto mt-10">
-        <h1 class="text-2xl font-bold text-gray-700 text-center mb-6">Cars List</h1>
-        <table class="min-w-full bg-white border border-gray-300">
-            <thead>
-                <tr>
-                    <th class="py-2 px-4">ID</th>
-                    <th class="py-2 px-4">Make</th>
-                    <th class="py-2 px-4">Model</th>
-                    <th class="py-2 px-4">Year</th>
-                    <th class="py-2 px-4">License Plate</th>
-                    <th class="py-2 px-4">Status</th>
-                    <th class="py-2 px-4">Actions</th>
-                </tr>
-            </thead>
-            <tbody>
-                <?php while ($row = $result->fetch_assoc()): ?>
-                    <tr class="border-b">
-                        <td class="py-2 px-4"><?= $row['id'] ?></td>
-                        <td class="py-2 px-4"><?= $row['make'] ?></td>
-                        <td class="py-2 px-4"><?= $row['model'] ?></td>
-                        <td class="py-2 px-4"><?= $row['year'] ?></td>
-                        <td class="py-2 px-4"><?= $row['license_plate'] ?></td>
-                        <td class="py-2 px-4"><?= $row['status'] ?></td>
-                        <td class="py-2 px-4">
-                            <a href="edit_car.php?id=<?= $row['id'] ?>" class="text-blue-500 hover:text-blue-700">Edit</a> | 
-                            <a href="delete_car.php?id=<?= $row['id'] ?>" class="text-red-500 hover:text-red-700">Delete</a>
-                        </td>
+    <!-- Main Content -->
+    <div class="container mx-auto mt-10 px-4">
+        <h1 class="text-3xl font-bold text-gray-700 text-center mb-6">Cars List</h1>
+        <div class="overflow-x-auto">
+            <table class="table-auto w-full bg-white shadow-md rounded border border-gray-300">
+                <thead class="bg-gray-200">
+                    <tr>
+                        <th class="px-4 py-2 text-left">ID</th>
+                        <th class="px-4 py-2 text-left">Make</th>
+                        <th class="px-4 py-2 text-left">Model</th>
+                        <th class="px-4 py-2 text-left">Year</th>
+                        <th class="px-4 py-2 text-left">License Plate</th>
+                        <th class="px-4 py-2 text-left">Status</th>
+                        <th class="px-4 py-2 text-left">Actions</th>
                     </tr>
-                <?php endwhile; ?>
-            </tbody>
-        </table>
+                </thead>
+                <tbody>
+                    <?php while ($row = $result->fetch_assoc()): ?>
+                        <tr class="border-b hover:bg-gray-100">
+                            <td class="px-4 py-2"><?= $row['id'] ?></td>
+                            <td class="px-4 py-2"><?= $row['make'] ?></td>
+                            <td class="px-4 py-2"><?= $row['model'] ?></td>
+                            <td class="px-4 py-2"><?= $row['year'] ?></td>
+                            <td class="px-4 py-2"><?= $row['license_plate'] ?></td>
+                            <td class="px-4 py-2"><?= $row['status'] ?></td>
+                            <td class="px-4 py-2">
+                                <a href="edit_car.php?id=<?= $row['id'] ?>" class="text-blue-600 hover:underline">Edit</a> | 
+                                <a href="delete_car.php?id=<?= $row['id'] ?>" class="text-red-600 hover:underline">Delete</a>
+                            </td>
+                        </tr>
+                    <?php endwhile; ?>
+                </tbody>
+            </table>
+        </div>
     </div>
 </body>
 </html>
