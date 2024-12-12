@@ -14,7 +14,10 @@
             <li><a href="index.html" class="hover:text-gray-200">Add Client</a></li>
             <li><a href="view_clients.php" class="hover:text-gray-200">View Clients</a></li>
             <li><a href="view_cars.php" class="hover:text-gray-200">View Cars</a></li>
-            <li><a href="add_car.php" class="hover:text-gray-200">add Cars</a></li>
+            <li><a href="add_car.php" class="hover:text-gray-200">Add Cars</a></li>
+            <li><a href="add_rental_contract.php" class="hover:text-gray-200">Add Rental Contracts</a></li>
+            <li><a href="add_rental_contract.php" class="hover:text-gray-200">Add Rental Contract</a></li>
+            <li><a href="view_rental_contracts.php" class="hover:text-gray-200">View Rental Contracts</a></li>
         </ul>
     </nav>
 
