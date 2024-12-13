@@ -1,0 +1,85 @@
+**Rapport Final : Modernisation du Système de Gestion de Location de Voitures**
+
+---
+
+### **Introduction**
+
+Le projet de modernisation du système de gestion de location de voitures avait pour objectif de concevoir une solution efficace, fiable et adaptée aux besoins actuels de l’entreprise. Ce rapport résume le processus de développement, les défis rencontrés, ainsi que les solutions apportées.
+
+---
+
+### **1. Processus de Développement**
+
+#### **1.1 Analyse des besoins**
+Nous avons commencé par analyser les besoins fonctionnels et techniques. Les exigences principales comprenaient :
+- Un système de gestion des utilisateurs avec authentification sécurisée.
+- La gestion des clients, des voitures et des contrats de location.
+- Une interface utilisateur simple et responsive.
+
+#### **1.2 Conception de la base de données**
+Nous avons conçu un schéma relationnel pour structurer les données :
+- **Tables principales** :
+  - `users` : Gestion des utilisateurs avec des jetons d'accès pour l’authentification.
+  - `clients` : Informations sur les clients.
+  - `cars` : Gestion des voitures, incluant état et disponibilité.
+  - `rental_contracts` : Contrats de location reliant clients et voitures.
+
+#### **1.3 Implémentation des fonctionnalités CRUD**
+Chaque entité (utilisateurs, clients, voitures et contrats) a été équipée de fonctionnalités CRUD pour permettre une gestion complète des données.
+
+#### **1.4 Sécurisation de l’application**
+- Mise en place d’une authentification via jetons pour sécuriser l’accès.
+- Validation des entrées utilisateurs pour éviter les injections SQL et autres attaques.
+
+---
+
+### **2. Défis Rencontrés**
+
+#### **2.1 Problèmes de schéma initial**
+Le schéma initial comportait des redondances et des limitations pour certaines opérations complexes.
+
+**Solution :** Une restructuration des tables avec des clés étrangères et des jointures adaptées a permis d'optimiser la base de données.
+
+#### **2.2 Gestion de l'authentification**
+La mise en place d'un système d'authentification basé sur les jetons a posé des difficultés liées à la sécurité.
+
+**Solution :** Utilisation de sessions PHP combinées à des jetons générés dynamiquement.
+
+#### **2.3 Intégration responsive de l'interface**
+L’adaptabilité de l’interface à différents appareils était un enjeu majeur.
+
+**Solution :** Utilisation de Tailwind CSS pour créer une interface responsive et harmonieuse.
+
+---
+
+### **3. Solutions Apportées**
+
+#### **3.1 Système robuste de gestion des données**
+Les tables relationnelles sont conçues pour permettre des opérations complexes (ex. : jointures pour obtenir les détails des contrats).
+
+#### **3.2 Interface utilisateur intuitive**
+L’application offre une expérience utilisateur fluide grâce à des formulaires clairs, une navigation simple et des retours visuels.
+
+#### **3.3 Authentification sécurisée**
+L’implémentation des jetons garantit une sécurité accrue pour les utilisateurs.
+
+---
+
+### **4. Conclusion**
+
+Le projet de modernisation a permis d’atteindre les objectifs fixés :
+- Mise en place d’un système robuste et sécurisé.
+- Amélioration de l’expérience utilisateur avec une interface adaptée.
+- Optimisation des processus de gestion des contrats de location.
+
+Ce projet a également permis de surmonter des défis techniques enrichissants, consolidant ainsi nos compétences en développement web et gestion de bases de données.
+
+---
+
+**Annexes**
+- Scripts SQL pour la création et l'insertion des données.
+- Captures d'écran de l'interface utilisateur.
+- Code source des principales fonctionnalités.
+
+Merci pour votre attention.
+
