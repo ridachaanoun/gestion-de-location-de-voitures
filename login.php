@@ -17,16 +17,18 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         if (password_verify($password, $user['password'])) {
             // Generate a secure token
             $token = bin2hex(random_bytes(32));
-
+            
             // Insert token into personal_access_tokens table
-            $insertTokenSql = "INSERT INTO personal_access_tokens (user_id, token) VALUES (?, ?)";
+            $insertTokenSql = "INSERT INTO personal_access_tokens (user_id, token, created_at) VALUES (?, ?, NOW())";
             $tokenStmt = $conn->prepare($insertTokenSql);
             $tokenStmt->bind_param("is", $user['id'], $token);
             $tokenStmt->execute();
+            
 
             // Save token in session
             $_SESSION['token'] = $token;
-
+            $_SESSION['user'] = "ridachaanoun";
+            
             // Redirect to the homepage
             header("Location: index.php");
             exit();

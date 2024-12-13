@@ -20,7 +20,7 @@ $result = $conn->query($sql);
     <!-- Navbar Section -->
     <nav class="bg-blue-600 text-white p-4 shadow">
         <ul class="flex justify-around">
-            <li><a href="index.html" class="hover:text-gray-200">Add Client</a></li>
+            <li><a href="adduser.html" class="hover:text-gray-200">Add Client</a></li>
             <li><a href="view_clients.php" class="hover:text-gray-200">View Clients</a></li>
             <li><a href="view_cars.php" class="hover:text-gray-200">View Cars</a></li>
             <li><a href="add_car.php" class="hover:text-gray-200">Add Cars</a></li>

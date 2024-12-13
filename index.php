@@ -13,18 +13,20 @@ $token = $_SESSION['token'];
 // Validate token
 $sql = "SELECT users.username FROM personal_access_tokens 
         JOIN users ON personal_access_tokens.user_id = users.id 
-        WHERE personal_access_tokens.token = ?";
+        WHERE personal_access_tokens.token = ? 
+        AND personal_access_tokens.created_at >= NOW() - INTERVAL 1 HOUR";
 $stmt = $conn->prepare($sql);
 $stmt->bind_param("s", $token);
 $stmt->execute();
 $result = $stmt->get_result();
+
 
 if ($result->num_rows === 1) {
     $user = $result->fetch_assoc();
     $username = $user['username'];
 } else {
     session_destroy();
-    header("Location: login.php");
+    header("Location: login.php?error=Token expired. Please log in again.");
     exit();
 }
 
